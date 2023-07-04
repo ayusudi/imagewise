@@ -14,9 +14,9 @@ export const authOptions: NextAuthOptions = {
   callbacks: {
     async signIn({ user }) {
       await authGoogle({
-        email: user.email,
-        name: user.name,
-        profile_img: user.image
+        email: user.email || '',
+        name: user.name || '',
+        profile_img: user.image || ''
       })
       return true
     },

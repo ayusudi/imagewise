@@ -34,6 +34,9 @@ module.exports = {
       },
       minHeight: {
         "res": "calc(100vh - (96px))"
+      },
+      width: {
+        "875": "87.5%"
       }
     },
   },
