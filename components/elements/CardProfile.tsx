@@ -7,26 +7,22 @@ const CardProfile = () => {
   const { data: session } = useSession();
 
   return (
-    <div className="relative h-60 bg-gradientapp flex flex-col w-96 bg-shrink bg-no-repeat text-white text-sm rounded-2xl rounded-x p-5">
+    <div className="mt-16 lg:mt-0 w-64 md:h-52 md:w-5/6 relative bg-gradientapp flex justify-content-center flex-col lg:w-96 sm:h-60 lg:h-60 bg-shrink bg-no-repeat text-white text-sm rounded-2xl rounded-x p-5">
       <img
         style={{
-          position: "absolute",
-          left: "25%",
           width: 200,
-          height: 200,
-          margin: "auto",
           marginTop: -100,
           border: "8px solid #5A9BD7"
         }}
-        className="rounded-full w-5 aspect-square object-contain" src={session?.user.image || ''} alt="" />
-      <div style={{ marginTop: 110, display: "flex", gap: 8, flexDirection: "column" }}>
+        className="rounded-full m-auto aspect-square object-contain flex justify-center" src={session?.user.image || ''} alt="" />
+      <div style={{ display: "flex", gap: 8, flexDirection: "column" }}>
         <p className="text-base text-center">{session?.user.name || ''}</p>
         <div className="flex w-100 justify-between">
           <p className="text-base">{session?.user.userName || ''}</p>
           <p>0 / 3 Credits</p>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
