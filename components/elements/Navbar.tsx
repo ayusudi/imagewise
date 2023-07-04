@@ -8,7 +8,7 @@ const Navbar = () => {
     <nav className="fixed w-full z-20 top-0 left-0 text-white">
       <div className="flex  flex-wrap items-center  p-6 lg:px-16  justify-stretch">
         <Link href="/" passHref className="flex items-center flex-1">
-          <img src="logo.png" className="h-12 mr-3" alt="IMAGEWISE" />
+          <img src="/logo.png" className="h-12 mr-3" alt="IMAGEWISE" />
           <span className="font-pro self-center text-2xl font-semibold whitespace-nowrap dark:text-white">IMAGEWISE</span>
         </Link>
         <div className="flex-1 flex md:order-2 justify-end">
@@ -52,21 +52,23 @@ const Navbar = () => {
               </Link>
               }
             </li>
+
+            {session ? (
+              <li>
+                <Link href="/features" >
+                  Transactions
+                </Link>
+              </li>
+            ) : <></>
+            }
+
             <li>
-              {!session ? (
-                <a
-                  href={`#demo`}
-                  className="text-white hidden lg:flex"
-                >
-                  Demo
-                </a>
-              ) : <></>
-              }
-            </li>
-            <li>
-              <Link href="/" >
-                Gallery
-              </Link>
+              <a
+                href={`/#demo`}
+                className="text-white hidden lg:flex"
+              >
+                Demo
+              </a>
             </li>
           </ul>
         </div>

@@ -6,7 +6,7 @@ import BannerLanding from "@elements/BannerLanding";
 
 export default function HomePage() {
   return (
-    <main className="bg-landing flex min-h-screen w-screen flex-col">
+    <main className="bg-page flex min-h-screen w-screen flex-col">
       <BannerLanding />
       <hr className="bg-white border-2" />
       <DemoFeature />
