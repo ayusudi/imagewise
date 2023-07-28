@@ -19,7 +19,9 @@ module.exports = {
         grapink: 'linear-gradient(0deg, rgba(69, 69, 69, 0.01) 80.8%, rgba(179, 109, 165, 0.5) 92.98%, #B5419B 100%);',
         gracard: 'linear-gradient(45deg, #342782 0%, #1E4898 70.52%, #3B5CB2 100%)',
         gcardfeature: 'linear-gradient(44deg, #251873 0%, #254C99 100%)',
-        gradfeatureblue: 'url("http://localhost:3000/bluegrad.png")'
+        gradfeatureblue: 'url("http://localhost:3000/bluegrad.png")',
+        "bluee": "#1A2360"
+
       },
       backgroundSize: {
         "shrink": "100% 100%"
@@ -52,8 +54,11 @@ module.exports = {
         "1260": "1260px"
       },
       colors: {
-        "blue-navy": "#264191"
+        "blue-navy": "#264191",
+        "bluee": "#1A2360"
+
       }
+
     },
   },
   plugins: [],

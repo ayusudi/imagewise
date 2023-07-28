@@ -52,16 +52,6 @@ const Navbar = () => {
               </Link>
               }
             </li>
-
-            {session ? (
-              <li>
-                <Link href="/features" >
-                  Transactions
-                </Link>
-              </li>
-            ) : <></>
-            }
-
             <li>
               <a
                 href={`/#demo`}

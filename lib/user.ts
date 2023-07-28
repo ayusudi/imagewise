@@ -21,3 +21,19 @@ export async function authGoogle({ email, name, profile_img }: { email: string, 
     })
   })
 }
+
+export async function infoLoggedUser(email: string) {
+  return new Promise((resolve, reject) => {
+    excuteQuery(`SELECT hint, credit FROM users WHERE email = '${email}'`, (err: Error, result: Array<String>) => {
+      if (err) {
+        reject(err)
+      } else {
+        if (!result.length) {
+          reject("NOTFOUND")
+        } else {
+          resolve(result[0])
+        }
+      }
+    })
+  })
+}

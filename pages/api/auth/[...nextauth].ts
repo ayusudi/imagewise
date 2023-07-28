@@ -21,7 +21,7 @@ export const authOptions: NextAuthOptions = {
       return true
     },
     redirect: async ({ url, baseUrl }) => {
-      return baseUrl
+      return baseUrl + "/features"
     },
     jwt: async ({ token, user }) => {
       user && (token.user = user)
@@ -30,7 +30,9 @@ export const authOptions: NextAuthOptions = {
     session: async ({ session, token }: { session: any; token: any }) => {
       session.user = token.user;
       session.user.userName = token.user.email
-      session.user.image = session.user.image.split("=s96-c")[0]
+      if (session.user.image.includes("=s96-c")) {
+        session.user.image = session.user.image.split("=s96-c")[0]
+      }
       return session;
     }
   },

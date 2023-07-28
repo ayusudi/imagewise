@@ -8,8 +8,8 @@ const CardFeatureNavigate = ({ feature, text, bg, url }: { feature: string | nul
     return (
       <div className="w-64 bg-gradientapp bg-shrink bg-no-repeat lg:w-96 flex-col md:flex-row md:w-5/6 rounded-xl justify-center md:justify-between md:items-center items-start flex px-4" style={{ height: 98, gap: 6 }}>
         <h1 className="font-pro text-xl">Your Collection</h1>
-        <Link href="/" className="flex text-blue-navy font-bold bg-white text-sm rounded-3xl p-0.5 font-pro w-36 justify-center items-center gap-1">
-          <p>Try It Now!</p>
+        <Link href="/collections" className="flex text-blue-navy font-bold bg-white text-sm rounded-3xl p-0.5 font-pro w-36 justify-center items-center gap-1">
+          <p>Check now &nbsp;</p>
           <img src="/icons/arrow.png" className="object-contain aspect-square h-10 w-auto" alt="" />
         </Link>
       </div>
@@ -22,8 +22,7 @@ const CardFeatureNavigate = ({ feature, text, bg, url }: { feature: string | nul
         text ? <p className="text-base">{text}</p> : <></>
       }
       <Link href={url || '/'}>
-        <ButtonArrow />
-
+        <ButtonArrow disable={false} />
       </Link>
     </div>
   );

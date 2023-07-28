@@ -3,7 +3,6 @@ import "styles/globals.css";
 import { SessionProvider } from "next-auth/react";
 import { ReactNode } from "react";
 import Navbar from "@elements/Navbar"
-
 import { Anonymous_Pro } from 'next/font/google'
 
 const pro = Anonymous_Pro({
@@ -19,7 +18,12 @@ interface Props {
 export default function RootLayout({ children, session }: Props) {
   return (
     <html lang="en">
+      <head>
+        <title>ImageWise</title>
+        <script src="/js/script.js" type="module"></script>
+      </head>
       <body className={pro.variable}>
+
         <SessionProvider session={session}>
           <Navbar />
           <div className="h-screen ">{children}</div>
