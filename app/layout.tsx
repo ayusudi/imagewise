@@ -19,6 +19,7 @@ export default function RootLayout({ children, session }: Props) {
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/x-icon" href="/logo.ico" />
         <title>ImageWise</title>
         <script src="/js/script.js" type="module"></script>
       </head>
