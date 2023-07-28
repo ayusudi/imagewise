@@ -1,6 +1,10 @@
 import React from "react";
 import ButtonGradient from "./ButtonGradient";
+import { signIn, useSession } from "next-auth/react"
+import Link from "next/link";
+
 const BannerLanding = () => {
+  const { data: session } = useSession()
   return (
     <section className="mt-20 lg:mt-0 bg-grablue px-6 lg:px-16 flex flex-col-reverse lg:flex-row min-h-screen lg:h-screen items-center">
       <div className="flex-1 text-white flex flex-col lg:gap-10 gap-5 ">
@@ -8,7 +12,23 @@ const BannerLanding = () => {
         <div className="flex flex-col gap-4">
           <p className="text-sm tracking-wider">AI-powered website enhances user-uploaded images, offering premium options like image generation from prompts, resolution fixing, and monochrome to colorization. It also provides a free image converter to the WebP format, optimized for web usage. This allows users to easily transform their images for faster loading and efficient online display.</p>
           <div>
-            <ButtonGradient text="Create an Account" />
+            {
+
+              session ?
+                <Link href="/features" >
+                  <ButtonGradient text="Let's explore our features!" />
+                </Link>
+                : <a
+                  href={`/api/auth/signin`}
+                  className="text-white hidden lg:flex"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    signIn("google")
+                  }}
+                >
+                  <ButtonGradient text="Create an Account" />
+                </a>
+            }
           </div>
         </div>
         <div>
